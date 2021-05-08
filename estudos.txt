@@ -1,0 +1,7 @@
+master  ----------------------------------------
+                                                producao.
+develop -------------------------------------------------------------------f1---------------f2------------f3                                           
+                                                feature1 - Rodrigo
+                                                feature2 - Develop - depende de api externa - main.css 
+                                                feature3 - Rodrigo
+                                                feature4 -                                  - main.css
