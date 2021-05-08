@@ -1,4 +1,4 @@
-git remote -v = lista repositorios remotos
+git remote -v = lista repositorios remotos - Rodrigo
 git remote add origin  https://github.com/RodrigoFSouza/estudos-git.git = adiciona um repositorio remoto
 
 git clone = clona um repositorio remoto
