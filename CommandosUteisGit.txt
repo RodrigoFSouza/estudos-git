@@ -1,0 +1,60 @@
+git remote -v = lista repositorios remotos
+git remote add origin https://github.com/rodrigofsouza/projeto-teste-git = adiciona um repositorio remoto
+
+git config --global core.editor code = alterar editor que abre arquivo de configuração do git
+git config --list
+
+git init = inicializar um projeto com git
+
+git add . = adiciona todos os arquivos untracted daquele nível de diretório
+git add --all = adiciona todos os arquivos untracted independente do diretório
+
+git commit --amend --no-edit = junta as alterações com o commit anterior
+
+git stash
+git stash list - lista de stashs
+git stash apply - aplica o stash mas não remove da pilha
+git stash pop - aplica o stash e remove da pilha
+git stash clear - limpa a lista do stash
+
+git log -oneline
+git log --pretty=format:'%C(blue)%h %C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
+
+git tag 1.0
+git show 1.0
+git tag -d 1.0
+git tag 1.0 -m "release 1.0"
+git tag -a "0.1.beta" -m "release 0.1.beta" e5d0df2
+git push origin master  --tags = manda todas as tags para o servidor
+git push origin master --follow-tags = manda somente as tags anotadas para o servidor
+git push --delete origin "0.2.beta" = remove tag do servidor remoto
+
+git reset = reverte o git add
+git reset = também reverte um commit - pode ser usado para renomear um commit
+	git reset 86ffadfb --soft -> volta o HEAD da arvore do git para o commit anterior ao commit que foi feito o reset os arquivos voltam param o Stage area
+	git reset HEAD~1 --mixed -> volta 1 commit ou seja a cabeça HEAD~1 porém com a opção mixed ele volta para untracted files
+	git reset HEAD~1 --hard -> volta tudo a opção hard vai desfazer de fato todas as modificações **
+	
+git revert = reverter um commit mantendo os commits mais novos e faz um novo commit retirando as alterações feitas no commit revertido
+	git revert 5897cavcb 
+	git revert HEAD~1 --no-edit - com essa opção ele não abre a tela para editar a mensagem do commit
+	git revert HEAD~1 --no-commit - com essa opção ele revert e deixa as alterações no índice para ser commitado
+	
+git checkout = desfaz as mudanças no arquivo porém somente em arquivos modificados arquivos novos não tem estado anterior só funciona na Unstaged area
+	git checkout index.js -> o git desfaz as mudanças naquele arquivo
+	git checkout 3783eabd -> volta para aquele commit e cria uma branch temporaria
+	git checkout 0.2.beta -> volta para aquela tag e cria uma branch temporaria
+	git checkout master -> muda de branch no caso vai para a branch master
+	
+git clean = remove arquivos untracked
+	git clean -n -> mostra o que será removido
+	git clean -nd -> se tiver arquivos untracked dentro de pastas
+	git clean -f -> força 
+	
+git rm = remove arquivos que já estão trackeados pelo git remove fisicamente o arquivo do projeto
+	git rm routes/ -r -> remove arquivos dentro de pastas recursivamente
+	git rm index.js --cached -> o git vai deixar de trackear aquele arquivo
+	
+	
+	
+
